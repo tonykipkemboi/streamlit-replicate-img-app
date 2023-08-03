@@ -1,3 +1,4 @@
 replicate
 streamlit
 requests
+streamlit-image-select
