@@ -16,7 +16,6 @@ icon.show_icon(":magic_wand:")
 
 # --- Secret Sauce (API Tokens and Endpoints) --- #
 REPLICATE_API_TOKEN = st.secrets["REPLICATE_API_TOKEN"]
-REPLICATE_MODEL_ENDPOINTSEG = st.secrets["REPLICATE_MODEL_ENDPOINTSEG"]
 REPLICATE_MODEL_ENDPOINTSTABILITY = st.secrets["REPLICATE_MODEL_ENDPOINTSTABILITY"]
 
 # --- Placeholders for Images and Gallery --- #
