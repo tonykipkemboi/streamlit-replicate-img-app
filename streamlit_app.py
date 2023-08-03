@@ -58,39 +58,44 @@ with st.sidebar:
 
 # --- Image Generation --- #
 if submitted:
-    try:
-        # Calling the replicate API to get the image
-        output = replicate.run(
-            REPLICATE_MODEL_ENDPOINTSTABILITY,
-            input={
-                "prompt": prompt,
-                "width": width,
-                "height": height,
-                "num_outputs": num_outputs,
-                "scheduler": scheduler,
-                "num_inference_steps": num_inference_steps,
-                "guidance_scale": guidance_scale,
-                "prompt_stregth": prompt_strength,
-                "refine": refine,
-                "high_noise_frac": high_noise_frac
-            }
-        )
+    with st.spinner('Whipping up your words into art... Give it a sec! 🧑🏽‍🍳🎨🌁'):
+        try:
+            # Calling the replicate API to get the image
+            output = replicate.run(
+                REPLICATE_MODEL_ENDPOINTSTABILITY,
+                input={
+                    "prompt": prompt,
+                    "width": width,
+                    "height": height,
+                    "num_outputs": num_outputs,
+                    "scheduler": scheduler,
+                    "num_inference_steps": num_inference_steps,
+                    "guidance_scale": guidance_scale,
+                    "prompt_stregth": prompt_strength,
+                    "refine": refine,
+                    "high_noise_frac": high_noise_frac
+                }
+            )
 
-        # Displaying the image and download option
-        for image in output:
-            with generated_images_placeholder.container():
-                st.image(image, caption="Generated Image 🎈", use_column_width=True)
-                response = requests.get(image)
-                if response.status_code == 200:
-                    image_data = response.content
-                    btn = st.download_button(
-                        ":red[**Download**]", data=image_data, file_name="output_file.png", mime="image/png", use_container_width=True)
-                else:
-                    st.error(
-                        f"Failed to fetch image from {image}. Error code: {response.status_code}", icon="🚨")
+            if output:
+                st.toast('Your image has been generated!', icon='😍')
 
-    except Exception as e:
-        st.error(f'Encountered an error: {e}', icon="🚨")
+            # Displaying the image and download option
+            for image in output:
+                with generated_images_placeholder.container():
+                    st.image(image, caption="Generated Image 🎈", use_column_width=True)
+                    response = requests.get(image)
+                    if response.status_code == 200:
+                        image_data = response.content
+                        btn = st.download_button(
+                            ":red[**Download**]", data=image_data, file_name="output_file.png", mime="image/png", use_container_width=True)
+                        st.toast("Download complete! Go show it off now!", icon="🥂")
+                    else:
+                        st.error(
+                            f"Failed to fetch image from {image}. Error code: {response.status_code}", icon="🚨")
+
+        except Exception as e:
+            st.error(f'Encountered an error: {e}', icon="🚨")
 
 # If not submitted, chill here 🍹
 else: pass
