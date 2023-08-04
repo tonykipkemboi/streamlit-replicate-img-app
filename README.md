@@ -2,6 +2,8 @@
 
 _Image Generator App: where art meets algorithms and dreams meet pixels!_ 🚀
 
+![Astronaut on a unicorn](./gallery/astro_on_unicorn.png)
+
 ## Overview
 
 Powered by cutting-edge AI models running on [Replicate](https://replicate.com/about) and wrapped in a Streamlit interface, this app lets you transform plain text prompts into mesmerizing visual masterpieces.
