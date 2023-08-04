@@ -18,6 +18,11 @@ icon.show_icon(":magic_wand:")
 REPLICATE_API_TOKEN = st.secrets["REPLICATE_API_TOKEN"]
 REPLICATE_MODEL_ENDPOINTSTABILITY = st.secrets["REPLICATE_MODEL_ENDPOINTSTABILITY"]
 
+# --- Resources text, link, and logo --- #
+replicate_text = "Stability AI SDXL Model on Replicate"
+replicate_link = "https://replicate.com/stability-ai/sdxl"
+replicate_logo = "https://storage.googleapis.com/llama2_release/Screen%20Shot%202023-07-21%20at%2012.34.05%20PM.png"
+
 # --- Placeholders for Images and Gallery --- #
 generated_images_placeholder = st.empty()
 gallery_placeholder = st.empty()
@@ -26,7 +31,7 @@ gallery_placeholder = st.empty()
 with st.sidebar:
     st.title(":orange[✨ Image Generation App ✨]", anchor=False)
     with st.form("my_form"):
-        st.info("Yo fam! Start here ↓", icon="👋🏾")
+        st.info("**Yo fam! Start here ↓**", icon="👋🏾")
         with st.expander(":blue[**Check under the hood? 🤷🏾‍♂️**]"):
             # Advanced Settings (for the curious minds!)
             width = st.number_input("Width of output image", value=1024)
@@ -55,6 +60,14 @@ with st.sidebar:
         # The Big Red "Submit" Button!
         submitted = st.form_submit_button(
             "Submit", type="primary", use_container_width=True)
+        
+    # Credits and resources
+    st.markdown(
+        ":orange[**Resources:**]  \n"
+        f"<img src='{replicate_logo}' style='height: 1em'> [{replicate_text}]({replicate_link})",
+        unsafe_allow_html=True
+    )
+    st.markdown("*Cooked up with ❤️ & code by Tony Kipkemboi!*")
 
 # --- Image Generation --- #
 if submitted:
@@ -89,8 +102,7 @@ if submitted:
                         image_data = response.content
                         btn = st.download_button(
                             ":red[**Download**]", data=image_data, file_name="output_file.png", mime="image/png", use_container_width=True)
-                        if btn:
-                            st.toast("Download complete! Go show it off now!", icon="🥂")
+                        st.toast("Download complete! Go show it off now!", icon="🥂")
                     else:
                         st.error(
                             f"Failed to fetch image from {image}. Error code: {response.status_code}", icon="🚨")
