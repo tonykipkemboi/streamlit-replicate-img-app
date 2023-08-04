@@ -102,7 +102,8 @@ if submitted:
                         image_data = response.content
                         btn = st.download_button(
                             ":red[**Download**]", data=image_data, file_name="output_file.png", mime="image/png", use_container_width=True)
-                        st.toast("Download complete! Go show it off now!", icon="🥂")
+                        if btn:
+                          st.toast("Download complete! Go show it off now!", icon="🥂")
                     else:
                         st.error(
                             f"Failed to fetch image from {image}. Error code: {response.status_code}", icon="🚨")
