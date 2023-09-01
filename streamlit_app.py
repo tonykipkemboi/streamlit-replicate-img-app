@@ -13,7 +13,7 @@ st.set_page_config(page_title="Replicate Image Generator",
                    page_icon=":bridge_at_night:",
                    layout="wide")
 
-icon.show_icon(":hot_pepper:")
+icon.show_icon(":foggy:")
 st.markdown("# :rainbow[Your Text-to-Image Artistry Studio]")
 
 # --- Initialize session state for generated images --- #
