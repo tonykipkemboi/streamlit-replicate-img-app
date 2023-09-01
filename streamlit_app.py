@@ -86,9 +86,10 @@ with st.sidebar:
     )
 
 # --- Image Generation --- #
-if submitted or st.session_state.generated_image:
-    with st.status('Whipping up your words into art...', expanded=True) as status:
-        st.write("Model run initiated...")
+if submitted:
+    with st.status('👩🏾‍🍳 Whipping up your words into art...', expanded=True) as status:
+        st.write("⚙️ Model initiated")
+        st.write("🙆‍♀️ Stand up and strecth in the meantime")
         try:
             # Only call the API if the "Submit" button was pressed
             if submitted:
@@ -145,7 +146,7 @@ if submitted or st.session_state.generated_image:
                     # Create a download button for the zip file
                     st.download_button(
                         ":red[**Download All Images**]", data=zip_io.getvalue(), file_name="output_files.zip", mime="application/zip", use_container_width=True)
-            status.update(label="Image(s) generated! 🎉",
+            status.update(label="✅ Images generated!",
                           state="complete", expanded=False)
         except Exception as e:
             st.error(f'Encountered an error: {e}', icon="🚨")
