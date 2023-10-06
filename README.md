@@ -59,12 +59,3 @@ Your insights can make this tool even better! Feel free to fork, make enhancemen
 
 ## Attribution
 
-- **Developed by**: The wizards over at [Stability AI](https://stability.ai/) 🧙‍♂️
-
-- **Model type**: Diffusion-based text-to-image generative model
-
-- **License**: [CreativeML Open RAIL++-M License](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/blob/main/LICENSE.md)
-
-- **Model Description**: This is a model that can be used to generate and modify images based on text prompts. It is a [Latent Diffusion Model](https://arxiv.org/abs/2112.10752) that uses two fixed, pretrained text encoders ([OpenCLIP-ViT/G](https://github.com/mlfoundations/open_clip) and [CLIP-ViT/L](https://github.com/openai/CLIP/tree/main)).
-
-- **Resources for more information**: Check out our [GitHub Repository](https://github.com/Stability-AI/generative-models) and the [SDXL report on arXiv](https://arxiv.org/abs/2307.01952).

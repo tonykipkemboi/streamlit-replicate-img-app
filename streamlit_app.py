@@ -14,7 +14,7 @@ st.set_page_config(page_title="Replicate Image Generator",
                    layout="wide")
 
 icon.show_icon(":foggy:")
-st.markdown("# :rainbow[Your Text-to-Image Artistry Studio]")
+st.markdown("# :rainbow[AI:ไทบ้าน By Mintjoruney]")
 
 # --- Initialize session state for generated images --- #
 if 'generated_image' not in st.session_state:
@@ -36,8 +36,8 @@ gallery_placeholder = st.empty()
 # --- Sidebar Elements --- #
 with st.sidebar:
     with st.form("my_form"):
-        st.info("**Yo fam! Start here ↓**", icon="👋🏾")
-        with st.expander(":rainbow[**Refine your output here**]"):
+        st.info("**ความเป็นไปได้ไม่มีที่สิ้นสุด ↓**", icon="👋🏾")
+        with st.expander(":rainbow[**ปรับ แต่ง ผลลัพธ์ ของคุณ ที่นี่**]"):
             # Advanced Settings (for the curious minds!)
             width = st.number_input("Width of output image", value=1024)
             height = st.number_input("Height of output image", value=1024)
@@ -78,9 +78,9 @@ with st.sidebar:
         ---
         Follow me on:
 
-        𝕏 → [@tonykipkemboi](https://twitter.com/tonykipkemboi)
+        𝕏 → [@phongwut_w](https://www.linkedin.com/in/iprompt)
 
-        LinkedIn → [Tony Kipkemboi](https://www.linkedin.com/in/tonykipkemboi)
+        LinkedIn → [Phongwut Wechabut](https://www.linkedin.com/in/iprompt/)
 
         """
     )
