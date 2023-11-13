@@ -5,27 +5,15 @@ import requests
 import zipfile
 import io
 
+from utils import icon
 from streamlit_image_select import image_select
-
-@st.cache_data
-def show_icon(emoji: str):
-    """Shows an emoji as a Notion-style page icon.
-
-    Args:
-        emoji (str): name of the emoji, i.e. ":balloon:"
-    """
-
-    st.write(
-        f'<span style="font-size: 78px; line-height: 1">{emoji}</span>',
-        unsafe_allow_html=True,
-    )
 
 # --- UI Configurations --- #
 st.set_page_config(page_title="Replicate Image Generator",
                    page_icon=":bridge_at_night:",
                    layout="wide")
 
-show_icon(":foggy:")
+icon.show_icon(":foggy:")
 st.markdown("# :rainbow[Your Text-to-Image Artistry Studio]")
 
 # --- Initialize session state for generated images --- #
