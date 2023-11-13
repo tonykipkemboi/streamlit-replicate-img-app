@@ -149,6 +149,7 @@ if submitted:
             status.update(label="✅ Images generated!",
                           state="complete", expanded=False)
         except Exception as e:
+            print(e)
             st.error(f'Encountered an error: {e}', icon="🚨")
 
 # If not submitted, chill here 🍹
