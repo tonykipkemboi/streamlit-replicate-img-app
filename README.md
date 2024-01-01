@@ -1,5 +1,7 @@
 # ✨ Image Generation App ✨
 
+[![Streamlit Replicate Image App](https://github.com/tonykipkemboi/streamlit-replicate-img-app/actions/workflows/python-app.yml/badge.svg)](https://github.com/tonykipkemboi/streamlit-replicate-img-app/actions/workflows/python-app.yml)
+
 _Image Generator App: where art meets algorithms and dreams meet pixels!_ 🚀
 
 ![Astronaut on a unicorn](./gallery/astro_on_unicorn.png)
