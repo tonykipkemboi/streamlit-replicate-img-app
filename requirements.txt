@@ -1,4 +1,4 @@
 replicate
-streamlit==1.30.0
+streamlit==1.37.0
 requests
 streamlit-image-select
